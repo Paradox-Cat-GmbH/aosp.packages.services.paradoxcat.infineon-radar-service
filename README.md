@@ -34,18 +34,15 @@ There are multiple ways to access the InfineonRadarService.
   - Application will have to write the binder boilerplate and manage the connection manually.
   - App will be depending on AIDL
 2. Use InfineonRadarManager.
-   It is an established android pattern to provide a helper class, which manages the binder connection for you and provides interfaces which are simple to use, so we also provide one.
+   It is an established Android pattern to provide a helper class, which manages the binder connection for you and provides interfaces which are simple to use, so we also provide one.
    Here there are 2 options:
    1. Build an InfineonRadarManager.jar using `m InfineonRadarManager`. 
      - Find the stub, e.g.,
        `out/soong/.intermediates/packages/services/paradoxcat/infineon-radar-service/manager/InfineonRadarManager.stubs/android_common/turbine-combined/InfineonRadarManager.stubs.jar`
-       Note: if the stub jar if missing, you may need to remove `system_ext_specific: true` from the `manager/Android.bp`.
+       Note: if the stub jar is missing, you may need to remove `system_ext_specific: true` from the `manager/Android.bp`.
      - Put the stub into your `app/libs/InfineonRadarManager.jar`
      - Add `compileOnly(files("libs/InfineonRadarManager.jar"))` to `build.gradle` of the app
    2. Build a whole `sdk_addon`.
      - For that you would need to build an emulator, `m sdk_addon` does not seem work on hardware targets.
      - TODO: add more instructions, it's quite complex.
 
-# TODO
-
-1. There are still some SELinux violations happening when accessing the service via app.
