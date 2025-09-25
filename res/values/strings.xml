@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2020, BMW AG. All rights reserved.
+-->
+<resources>
+    <string name="permission_label_bind_service">Bind Infineon Radar Service</string>
+    <string name="permission_description_bind_service">Allows binding to the Infineon Radar Service</string>
+</resources>

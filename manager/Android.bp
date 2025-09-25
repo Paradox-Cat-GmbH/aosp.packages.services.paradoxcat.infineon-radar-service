@@ -1,0 +1,26 @@
+java_sdk_library {
+    name: "InfineonRadarManager",
+    srcs: [
+        "src/com/paradoxcat/infineon/radar/InfineonRadarManager.kt",
+    ],
+    api_packages: [
+        "com.paradoxcat.infineon.radar",
+    ],
+    static_libs: [
+        "InfineonRadarServiceAidl-java",
+        "kotlinx-coroutines-android",
+        "kotlinx-coroutines-core",
+    ],
+    public: {
+        enabled: true,
+    },
+    system: {
+        enabled: false,
+    },
+    test: {
+        enabled: false,
+    },
+    unsafe_ignore_missing_latest_api: true, // we don't version anything yet
+    system_ext_specific: true, // seems like stubs don't get generated with this enabled
+    platform_apis: true, // we don't depend on any, but we are compiling against system partition
+}

@@ -1,0 +1,12 @@
+// Signature format: 2.0
+package com.paradoxcat.infineon.radar {
+
+  public final class InfineonRadarManager {
+    ctor public InfineonRadarManager();
+    method public void bind(@NonNull android.content.Context context);
+    method @NonNull public kotlinx.coroutines.flow.Flow<byte[]> imageFlow();
+    method public void unbind(@NonNull android.content.Context context);
+  }
+
+}
+

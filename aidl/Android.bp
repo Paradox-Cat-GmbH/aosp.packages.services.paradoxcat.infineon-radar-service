@@ -1,0 +1,19 @@
+aidl_interface {
+    name: "InfineonRadarServiceAidl",
+    srcs: [
+        "com/paradoxcat/infineon/radar/*.aidl",
+    ],
+    backend: {
+        java: {
+            enabled: true, // for service and manager
+        },
+        cpp: {
+            enabled: false,
+        },
+        ndk: {
+            enabled: false,
+        },
+    },
+    unstable: true, // this AIDL is towards applications, so it's versioned differently
+    system_ext_specific: true,
+}

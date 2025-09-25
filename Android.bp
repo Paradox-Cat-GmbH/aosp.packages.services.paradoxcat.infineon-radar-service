@@ -1,0 +1,22 @@
+android_app {
+    aaptflags: [ "--no-compress" ],
+    asset_dirs: [ "assets" ],
+    certificate: "platform",
+    name: "InfineonRadarService",
+    platform_apis: true,
+    srcs: [
+        "src/**/*.kt",
+    ],
+    resource_dirs: [ "res" ],
+    static_libs: [
+        "androidx.lifecycle_lifecycle-service",
+        "litert", // LiteRT (tensorflow) for gesture inference
+        "litert-api",
+        "kotlinx-coroutines-android",
+        "kotlinx-coroutines-core",
+        "vendor.infineon.radar-V1-java", // HAL
+        "InfineonRadarServiceAidl-java", // Manager AIDL of the service
+    ],
+    jni_libs: [ "libtensorflowlite_jni" ], // workaround for android_library_import not able to load .so
+    system_ext_specific: true,
+}
