@@ -75,7 +75,6 @@ public class InfineonRadarService : LifecycleService() {
         val image = Array(32) { ByteArray(32) }
         lifecycleScope.launch(Dispatchers.IO) {
             radarHal.rawDataFlow().collect { frame ->
-                Log.v(TAG, "Got a frame from HAL")
                 val frameArray = frame.data.reshapeTo3D(numAntennas, numChirps, numSamplesPerChirp)
                 interp.runSignature(
                     mapOf("args_0" to frameArray),
